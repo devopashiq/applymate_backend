@@ -13,7 +13,7 @@ class JobRepository {
         return jobs_model_1.default.find({ userId }).exec();
     }
     async create(job) {
-        return jobs_model_1.default.create(job);
+        return await jobs_model_1.default.create(job);
     }
     async update(updatedData, id, userId) {
         return jobs_model_1.default.findOneAndUpdate({ _id: id, userId }, {

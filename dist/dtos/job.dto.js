@@ -33,9 +33,9 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateJobSchema = exports.createJobSChema = void 0;
+exports.updateJobSchema = exports.createJobSchema = void 0;
 const z = __importStar(require("zod"));
-exports.createJobSChema = z.object({
+exports.createJobSchema = z.object({
     company: z.string(),
     position: z.string(),
     description: z.string().max(500, "Description cannot exceed 500 characters"),
@@ -48,4 +48,4 @@ exports.createJobSChema = z.object({
     //     }),
     //   ),
 });
-exports.updateJobSchema = exports.createJobSChema.partial();
+exports.updateJobSchema = exports.createJobSchema.partial();

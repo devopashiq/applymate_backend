@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
+
 import * as z from "zod";
 
-export const createJobSChema = z.object({
+export const createJobSchema = z.object({
   company: z.string(),
   position: z.string(),
   description: z.string().max(500, "Description cannot exceed 500 characters"),
@@ -17,6 +17,5 @@ export const createJobSChema = z.object({
 });
 
 
-export const updateJobSchema = createJobSChema.partial()
-export type CreateJobDTO = z.infer<typeof createJobSChema>;
-export type UpdateJobDTO = z.infer<typeof updateJobSchema>;
+export const updateJobSchema = createJobSchema.partial()
+

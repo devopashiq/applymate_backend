@@ -1,18 +1,15 @@
 import { Types } from "mongoose";
-import { CreateJobDTO } from "../dtos/job.dto";
+
 import { JobDocument } from "../models/jobs.model";
 import { JobRepository } from "../repositories/job.repository";
+import { CreateJobRequest, JobEntity, JobResponse } from "../types/job.type";
 
 export class JobService {
   private repo = new JobRepository();
 
-  async create(userId: string, data: CreateJobDTO): Promise<JobDocument> {
-    const job = await this.repo.create({
-        userId:new Types.ObjectId(userId),
-        ...data
-    });
+  async create(data: CreateJobRequest): Promise<JobEntity> {
+    const job = await this.repo.create(data);
 
-
-    return job
+    return job;
   }
 }

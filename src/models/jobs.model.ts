@@ -45,5 +45,5 @@ const jobSchema = new mongoose.Schema({
 export type  JobDocument = InferSchemaType<typeof jobSchema>
 
 
-const JobModel = mongoose.model<JobDocument>("Job", jobSchema);
+ const  JobModel = mongoose.model<JobDocument>("Job", jobSchema);
 export default JobModel;

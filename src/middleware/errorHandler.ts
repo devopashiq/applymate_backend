@@ -31,7 +31,7 @@ export const errorHandler = (
 
   if (error?.isOperational) {
     res.status(statusCode).json({
-      status: "error",
+      success: false,
       message,
       ...(process.env.NODE_ENV === "development" && { stack }),
     });

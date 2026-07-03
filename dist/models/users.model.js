@@ -11,7 +11,8 @@ const userSchema = new mongoose_1.default.Schema({
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     password: {
         type: String,
@@ -20,7 +21,8 @@ const userSchema = new mongoose_1.default.Schema({
     role: {
         type: String,
         default: "user"
-    }
+    },
+    refreshToken: [String]
 }, {
     timestamps: true
 });

@@ -11,12 +11,13 @@ export class JobController {
   ): Promise<void> => {
     try {
       const user = req.user;
+      const data ={...req.body,userId:user}
 
       if (!user) {
         throw new ExpressError("Unauthorized", 401);
       }
 
-      const job = await this.service.create('2322323', req.body);
+      const job = await this.service.create(data);
 
       res.success(job);
     } catch (error) {
